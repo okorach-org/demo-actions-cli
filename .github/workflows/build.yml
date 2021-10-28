@@ -57,15 +57,9 @@ jobs:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-      - name: Analyze CLI comp
-        uses: docker://sonarsource/sonar-scanner-cli:latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_PROJECT_BASE_DIR: comp-cli
-          SONAR_VERBOSE: true
+      - name: Run scanner
+        uses: sonarsource/sonarqube-scan-action@master
         with:
-          sonar.projectBaseDir: comp-cli
-          sonar.verbose: true
-          sonar.qualitygate.wait: false
+          projectBaseDir: comp-cli
+          args:
+            -Dsonar.verbose=true
