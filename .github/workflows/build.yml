@@ -42,27 +42,28 @@ jobs:
       #     run: |
       #       pytest
       - name: Run tests
-        working-directory: ./comp-cli
+        working-directory: .
         run: ./run_tests.sh
-      - name: Run linters
-        working-directory: ./comp-cli
+      - name: Run all linters
+        working-directory: .
         run: ./run_linters.sh
       - name: Set tags
         run: |
           # Set project tags on the fly
           curl -X POST -u ${{ secrets.SONAR_TOKEN }}: "${{ secrets.SONAR_HOST_URL }}/api/project_tags/set?project=${{env.projectKey}}&tags=${{env.tags}}"
-      - name: Cache SonarQube packages
+      - name: Fetch scanner cache
         uses: actions/cache@v1
         with:
           path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-      - name: Run scanner
-        uses: sonarsource/sonarqube-scan-action@master
+          key: ${{ runner.os }}-sonar-2022
+          restore-keys: ${{ runner.os }}-sonar-2022
+      - name: Analyze CLI comp
+        uses: docker://sonarsource/sonar-scanner-cli:latest
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
-          projectBaseDir: comp-cli
-          args:
-            -Dsonar.verbose=true
+          sonar.qualitygate.wait: false
+          sonar.verbose: true
+
