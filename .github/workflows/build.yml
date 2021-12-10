@@ -63,8 +63,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_USER_HOME: .
+          SONAR_PROJECTBASEDIR: ./comp-cli
         with:
           sonar.qualitygate.wait: false
-          sonar.projectBaseDir: ./comp-cli
-          sonar.userHome: .
 
