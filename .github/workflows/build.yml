@@ -65,5 +65,6 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           sonar.qualitygate.wait: false
+          sonar.projectBaseDir: ./comp-cli
           sonar.userHome: .
 
