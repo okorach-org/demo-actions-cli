@@ -44,7 +44,7 @@ jobs:
       - name: Run tests
         working-directory: ./comp-cli
         run: ./run_tests.sh
-      - name: Run linters
+      - name: Run all linters
         working-directory: ./comp-cli
         run: ./run_linters.sh
       - name: Set tags
