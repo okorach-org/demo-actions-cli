@@ -55,7 +55,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ./.sonar
-          key: ${{ runner.os }}-sonar-cache
+          key: ${{ runner.os }}-sonar-2022
           restore-keys: ${{ runner.os }}-sonar
       - name: Analyze CLI comp
         uses: docker://sonarsource/sonar-scanner-cli:latest
