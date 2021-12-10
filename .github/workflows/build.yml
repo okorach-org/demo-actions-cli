@@ -54,7 +54,7 @@ jobs:
       - name: Cache SonarQube packages
         uses: actions/cache@v1
         with:
-          path: ./.sonar/cache
+          path: ./.sonar
           key: ${{ runner.os }}-sonar-cache
           restore-keys: ${{ runner.os }}-sonar
       - name: Analyze CLI comp
