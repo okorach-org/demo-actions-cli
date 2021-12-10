@@ -66,4 +66,5 @@ jobs:
           SONAR_USER_HOME: ./.sonar
         with:
           sonar.qualitygate.wait: false
+          sonar.verbose: true
 
