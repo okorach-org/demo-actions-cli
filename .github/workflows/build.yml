@@ -42,10 +42,10 @@ jobs:
       #     run: |
       #       pytest
       - name: Run tests
-        working-directory: ./comp-cli
+        working-directory: .
         run: ./run_tests.sh
       - name: Run all linters
-        working-directory: ./comp-cli
+        working-directory: .
         run: ./run_linters.sh
       - name: Set tags
         run: |
@@ -64,7 +64,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_USER_HOME: .
-          SONAR_PROJECTBASEDIR: ./comp-cli
         with:
           sonar.qualitygate.wait: false
 
