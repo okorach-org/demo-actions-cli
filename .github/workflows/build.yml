@@ -77,3 +77,6 @@ jobs:
             -Dsonar.verbose=true
             -Dsonar.userHome=.
 
+      - name: "Where's my cache"
+        working-directory: .
+        run: find .
