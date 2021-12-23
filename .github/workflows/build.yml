@@ -54,9 +54,9 @@ jobs:
       - name: Fetch scanner cache
         uses: actions/cache@v1
         with:
-          path: /github/workspace/cache
-          key: ${{runner.os}}-scanner-v5
-          restore-keys: ${{runner.os}}-scanner-v5
+          path: /home/runner/work/demo-actions-cli/demo-actions-cli/cache
+          key: ${{runner.os}}-scanner-v6
+          restore-keys: ${{runner.os}}-scanner-v6
       #- name: Analyze CLI comp
       #  uses: docker://sonarsource/sonar-scanner-cli:latest
       #  env:
@@ -79,4 +79,6 @@ jobs:
 
       - name: "Where's my cache"
         working-directory: .
-        run: find . || echo "OK"
+        run: |
+          pwd
+          find . || echo "OK"
