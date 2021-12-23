@@ -55,7 +55,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: /github/workspace/cache
-          key: ${{runner.os}}-scanner-v3
+          key: ${{runner.os}}-scanner-v4
           restore-keys: ${{runner.os}}-scanner-v4
       #- name: Analyze CLI comp
       #  uses: docker://sonarsource/sonar-scanner-cli:latest
