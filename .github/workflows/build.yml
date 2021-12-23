@@ -54,7 +54,7 @@ jobs:
       - name: Fetch scanner cache
         uses: actions/cache@v1
         with:
-          path: ~/.sonar/cache
+          path: ./.sonar/cache
           key: ${{ runner.os }}-scanner-2022
           restore-keys: ${{ runner.os }}-scanner-2022
       #- name: Analyze CLI comp
@@ -75,4 +75,5 @@ jobs:
           # projectBaseDir: app/src
           args: >
             -Dsonar.verbose=true
+            -Dsonar.userHome=.
 
