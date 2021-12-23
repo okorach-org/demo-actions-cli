@@ -54,9 +54,9 @@ jobs:
       - name: Fetch scanner cache
         uses: actions/cache@v1
         with:
-          path: /github/workspace/.sonar/cache
+          path: /github/workspace/cache
           key: ${{runner.os}}-scanner-v3
-          restore-keys: ${{runner.os}}-scanner-v3
+          restore-keys: ${{runner.os}}-scanner-v4
       #- name: Analyze CLI comp
       #  uses: docker://sonarsource/sonar-scanner-cli:latest
       #  env:
