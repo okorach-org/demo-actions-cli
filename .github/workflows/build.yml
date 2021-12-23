@@ -79,4 +79,4 @@ jobs:
 
       - name: "Where's my cache"
         working-directory: .
-        run: find .
+        run: find . || echo "OK"
