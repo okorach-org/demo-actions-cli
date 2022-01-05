@@ -50,20 +50,35 @@ jobs:
       - name: Set tags
         run: |
           # Set project tags on the fly
-          curl -X POST -u ${{ secrets.SONAR_TOKEN }}: "${{ secrets.SONAR_HOST_URL }}/api/project_tags/set?project=${{env.projectKey}}&tags=${{env.tags}}"
+          curl -X POST -u ${{ secrets.SONAR_TOKEN }}: "${{ secrets.SONAR_HOST_URL }}/api/project_tags/set?project=${{ env.projectKey }}&tags=${{ env.tags }}"
       - name: Fetch scanner cache
         uses: actions/cache@v1
         with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar-2022
-          restore-keys: ${{ runner.os }}-sonar-2022
-      - name: Analyze CLI comp
-        uses: docker://sonarsource/sonar-scanner-cli:latest
+          path: ${{ github.workspace }}/cache
+          key: ${{ runner.os }}-scanner-v10
+          restore-keys: ${{ runner.os }}-scanner-v10
+      #- name: Analyze CLI comp
+      #  uses: docker://sonarsource/sonar-scanner-cli:latest
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #    SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      #  with:
+      #    sonar.qualitygate.wait: false
+      #    sonar.verbose: true
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
-          sonar.qualitygate.wait: false
-          sonar.verbose: true
+          # projectBaseDir: app/src
+          args: >
+            -Dsonar.verbose=true
+            -Dsonar.userHome=.
 
+      - name: "Where's my cache"
+        working-directory: .
+        run: |
+          pwd
+          find . || echo "OK"
