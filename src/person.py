@@ -1,3 +1,4 @@
+from operator import truediv
 import socket
 
 SOME_VALUE = 56000
@@ -44,3 +45,10 @@ def hotspot(ip):
         ip = '192.168.12.43'
     sock = socket.socket()
     sock.bind((ip, 9090))
+
+def check_ip(ip):
+    import re
+    if re.match(r"198.168.12.43", ip):
+        return True
+    else:
+        return False
