@@ -48,7 +48,9 @@ def hotspot(ip):
 
 def check_ip(ip):
     import re
+    import hashlib
+    hash_val = hashlib.md5().hexdigest()
     if re.match(r"198.168.12.43", ip):
-        return True
+        return hash_val
     else:
         return False
