@@ -10,3 +10,5 @@ coverageReport="$buildDir/coverage.xml"
 echo "Running tests"
 coverage run -m pytest
 coverage xml -o $coverageReport
+
+exit 0
