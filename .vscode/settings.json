@@ -1,0 +1,8 @@
+{
+    "sonarlint.connectedMode.project": {
+    
+        "connectionId": "LATEST",
+        "projectKey": "demo:github-actions-cli"
+    },
+    "sonarlint.focusOnNewCode": true
+}

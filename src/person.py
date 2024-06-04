@@ -1,5 +1,6 @@
 import socket
 
+MINIMUM_PAY = 0
 SOME_VALUE = 56000
 ANOTHER_VALUE = 61000
 
@@ -31,7 +32,6 @@ class Person:
 
     def happy_birthday(self):
         return "Happy birthday " + self.firstname
-
 
     def is_major(self):
         return self.age > 18
