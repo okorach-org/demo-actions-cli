@@ -20,11 +20,11 @@ jobs:
     #    python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: 3.8
       - name: Install dependencies
@@ -52,7 +52,7 @@ jobs:
           # Set project tags on the fly
           curl -X POST -u ${{ secrets.SONAR_TOKEN }}: "${{ secrets.SONAR_HOST_URL }}/api/project_tags/set?project=${{ env.projectKey }}&tags=${{ env.tags }}"
       - name: Fetch scanner cache
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         with:
           path: ${{ github.workspace }}/cache
           key: ${{ runner.os }}-scanner-v10
