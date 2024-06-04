@@ -39,6 +39,11 @@ class Person:
     def lock(self):
         self.password = "donttouch"
 
+    def rename(self, new_name: str) -> None:
+        self.firstname = ""
+        if self.firstname == "":
+            self.firstname = new_name
+
 
 def hotspot(ip):
     if ip is None:
