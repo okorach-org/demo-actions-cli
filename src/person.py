@@ -40,6 +40,12 @@ class Person:
         self.password = "donttouch"
 
 
+    def rename(self, new_name: str) -> None:
+        self.name = ""
+        if self.name == "":
+            self.name = new_name
+
+
 def hotspot(ip):
     if ip is None:
         ip = '192.168.12.43'
