@@ -1,5 +1,6 @@
 import socket
 
+MINIMUM_PAY = 0
 SOME_VALUE = 56000
 ANOTHER_VALUE = 61000
 
@@ -32,12 +33,16 @@ class Person:
     def happy_birthday(self):
         return "Happy birthday " + self.firstname
 
-
     def is_major(self):
         return self.age > 18
 
     def lock(self):
         self.password = "donttouch"
+
+    def minimum_pay(self, minimum_pay: int) -> None:
+        self.compensation = 0
+        if self.compensation == 0:
+            self.compensation = minimum_pay
 
 
 def hotspot(ip):
