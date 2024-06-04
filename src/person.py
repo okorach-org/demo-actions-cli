@@ -39,11 +39,6 @@ class Person:
     def lock(self):
         self.password = "donttouch"
 
-    def minimum_pay(self, minimum_pay: int) -> None:
-        self.compensation = 0
-        if self.compensation == 0:
-            self.compensation = minimum_pay
-
 
 def hotspot(ip):
     if ip is None:
