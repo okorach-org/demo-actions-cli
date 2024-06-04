@@ -32,18 +32,16 @@ class Person:
     def happy_birthday(self):
         return "Happy birthday " + self.firstname
 
-
     def is_major(self):
         return self.age > 18
 
     def lock(self):
         self.password = "donttouch"
 
-
     def rename(self, new_name: str) -> None:
-        self.name = ""
-        if self.name == "":
-            self.name = new_name
+        self.firstname = ""
+        if self.firstname == "":
+            self.firstname = new_name
 
 
 def hotspot(ip):
