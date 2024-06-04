@@ -16,6 +16,8 @@ class Person:
         self.gender = None
         self.religion = None
         self.compensation = 0
+        if self.compensation == 0:
+            self.compensation = 1
 
     def store_religion(self, religion):
         self.religion = religion
@@ -31,7 +33,6 @@ class Person:
 
     def happy_birthday(self):
         return "Happy birthday " + self.firstname
-
 
     def is_major(self):
         return self.age > 18
