@@ -10,8 +10,8 @@
         "message": "Compensation calculation based on gender is forbidden",
         "filePath": "src/person.py",
         "textRange": {
-          "startLine": 27,
-          "endLine": 30,
+          "startLine": 28,
+          "endLine": 31,
           "startColumn": 11,
           "endColumn": 45
         }
@@ -27,8 +27,8 @@
         "message": "Storing religion is forbidden",
         "filePath": "src/person.py",
         "textRange": {
-          "startLine": 24,
-          "endLine": 24,
+          "startLine": 25,
+          "endLine": 25,
           "startColumn": 8,
           "endColumn": 32
         }
@@ -38,8 +38,8 @@
           "message": "Religion field defined in object",
           "filePath": "src/person.py",
           "textRange": {
-            "startLine": 20,
-            "endLine": 20,
+            "startLine": 21,
+            "endLine": 21,
             "startColumn": 8,
             "endColumn": 21
           }
@@ -48,8 +48,8 @@
           "message": "Religion is stored",
           "filePath": "src/person.py",
           "textRange": {
-            "startLine": 24,
-            "endLine": 24,
+            "startLine": 25,
+            "endLine": 25,
             "startColumn": 8,
             "endColumn": 32
           }
