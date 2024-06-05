@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import socket
 
 MINIMUM_PAY = 0
@@ -39,7 +41,7 @@ class Person:
     def lock(self):
         self.password = "donttouch"
 
-    def minimum_pay(self, minimum_pay: int):
+    def minimum_pay(self, minimum_pay: int) -> None:
         self.compensation = 0
         if self.compensation == 0:
             self.compensation = minimum_pay
