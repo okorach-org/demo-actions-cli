@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
+
 import socket
 
 SOME_VALUE = 56000
 ANOTHER_VALUE = 61000
+
 
 class Person:
 
