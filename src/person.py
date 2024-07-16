@@ -18,7 +18,7 @@ class Person:
         self.religion = None
         self.compensation = 0
 
-    def store_religion(self, religion):
+    def store_religion(self, religion: str) -> None:
         self.religion = religion
 
     def compute_pay(self):
