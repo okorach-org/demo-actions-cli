@@ -17,8 +17,9 @@ class Person:
         self.gender = None
         self.religion = None
         self.compensation = 0
+        self.password = None
 
-    def store_religion(self, religion: str):
+    def store_religion(self, religion: str) -> None:
         self.religion = religion
 
     def compute_pay(self):
