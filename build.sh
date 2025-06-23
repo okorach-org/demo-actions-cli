@@ -2,6 +2,7 @@
 echo "Running: \
     Coverage tests
 "
+
 ./run_tests.sh
 
 echo "Running: \
